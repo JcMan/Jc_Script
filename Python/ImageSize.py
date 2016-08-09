@@ -20,7 +20,7 @@ def changeAll():
             scale = float(sys.argv[1])
             width = int(img.size[0]*scale)
             height = int(img.size[1]*scale)
-            img = img.resize((width,height))
+            img = img.resize((width,height),Image.ANTIALIAS)
             img.save(os.path.join(result,file),filetype,quality = 99)
             print(file+' changed!')
 
@@ -42,7 +42,7 @@ def changeOne():
         scale = float(sys.argv[2])
         width = int(img.size[0]*scale)
         height = int(img.size[1]*scale)
-        img = img.resize((width,height))
+        img = img.resize((width,height),Image.ANTIALIAS)
         img.save(os.path.join(result,sys.argv[1]),filetype,quality = 99)
         print(sys.argv[1]+' changed!')
 
